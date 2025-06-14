@@ -1,14 +1,16 @@
 const readline = require('readline');
 
-// Function to capitalize the first letter of each word
+// Function to capitalize each word
 function capitalizeWords(sentence) {
     return sentence
+        .toLowerCase() // Convert entire sentence to lowercase
         .split(' ')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
 }
 
-// Set up command-line input
+
+// Read user input from the terminal
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
